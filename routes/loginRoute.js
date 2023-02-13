@@ -3,6 +3,7 @@ const {
   loginGet,
   checkAuthenticated,
   checkNotAuthenticated,
+  logout,
 } = require('../controller/loginController');
 const router = express.Router();
 const passport = require('passport');
@@ -17,4 +18,5 @@ router.get('/login', checkNotAuthenticated, loginGet).post(
   })
 );
 
+router.get('/logout', logout);
 module.exports = router;
